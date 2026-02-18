@@ -16,6 +16,8 @@ export function ThemeProvider(props: PropsWithChildren) {
             appearance === APPEARANCES.dark ? "midnightblue" : "white",
           fontFamily: font,
           height: "100vh",
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         {children}

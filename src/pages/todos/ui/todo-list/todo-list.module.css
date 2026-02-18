@@ -1,14 +1,18 @@
-.wrapper {
+.container {
+    flex: 5;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+    padding: 25px 75px;
 }
 
-.list {
-    display: grid;
-    grid-template-columns: auto;
-    gap: 10px
+.title-container {
+    height: 52px;
+}
+
+.list-container {
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
 }

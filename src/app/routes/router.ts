@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router";
 import { TodosPage } from "../../pages/todos/ui/todos-page";
 import { ErrorPage } from "../../pages/error/error-page";
 import { HomePage } from "../../pages/home/home-page";
-import { TodosLayout } from "../layouts/todos-layout";
+import { TodosLayout } from "../layouts/todos-layout/ui/todos-layout";
 import { TodoPage } from "../../pages/todo/ui/todo-page";
 import { AppLayout } from "../layouts/app-layout";
 

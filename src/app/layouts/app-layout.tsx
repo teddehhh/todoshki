@@ -4,9 +4,7 @@ import { Cookies } from "../../widgets/cookies/cookies";
 export function AppLayout() {
   return (
     <>
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
       <Cookies />
     </>
   );
