@@ -1,28 +1,30 @@
-import { memo, useCallback, type ChangeEvent } from "react";
-import type {
-  Todo,
-  TodoContextProps,
-} from "../../../../entities/todo/types/todo";
+import { memo, useCallback, useContext, type ChangeEvent } from "react";
+import type { Todo } from "../../../../entities/todo/types/todo";
 import { TodoDisplayMemo } from "../todo-display/todo-display";
 import styles from "./todo-item.module.css";
+import { TodoActionsContext } from "../../../../entities/todo/model/todo-context";
 
 interface TodoItemProps {
   todo: Todo;
-  updateTodo: TodoContextProps["updateTodo"];
-  removeTodo?: TodoContextProps["removeTodo"];
+  onTextUpdate?: (todoId: number, todo: Partial<Todo>) => void;
 }
 
 export const TodoItemMemo = memo(TodoItem);
 
 export function TodoItem(props: TodoItemProps) {
-  const { todo, updateTodo, removeTodo } = props;
-  console.log("TodoItem");
+  const { todo, onTextUpdate } = props;
+  const { updateTodo, removeTodo } = useContext(TodoActionsContext);
 
   const handleCheck = (todo: Todo, event: ChangeEvent<HTMLInputElement>) => {
     updateTodo(todo.id, { completed: event.target.checked });
   };
 
   const handleUpdateText = useCallback((text: string) => {
+    if (onTextUpdate) {
+      onTextUpdate(todo.id, { ...todo, text });
+      return;
+    }
+
     updateTodo(todo.id, { ...todo, text });
   }, []);
 
@@ -43,9 +45,7 @@ export function TodoItem(props: TodoItemProps) {
               handleCheck(todo, event);
             }}
           />
-          {removeTodo && (
-            <button onClick={() => handleRemove(todo.id)}>&#x1F5D1;</button>
-          )}
+          {<button onClick={() => handleRemove(todo.id)}>&#x1F5D1;</button>}
         </div>
       </div>
     </div>

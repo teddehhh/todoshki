@@ -17,7 +17,6 @@ export function TodoDisplay(props: TodoDisplayProps) {
   const [mode, setMode] = useState<TodoDisplayMode>(
     text === null ? TODO_DISPLAY_MODE.edit : TODO_DISPLAY_MODE.view,
   );
-  // console.log("TodoDisplay");
 
   const viewRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);

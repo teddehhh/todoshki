@@ -1,17 +1,11 @@
-import { useState } from "react";
-import type {
-  Todo,
-  TodoContextProps,
-} from "../../../../entities/todo/types/todo";
-import { TodoItemMemo } from "../todo-item/todo-item";
+import { useContext, useState } from "react";
+import type { Todo } from "../../../../entities/todo/types/todo";
+import { TodoActionsContext } from "../../../../entities/todo/model/todo-context";
+import { TodoItem } from "../todo-item/todo-item";
 
-interface AddTodoButtonProps {
-  addTodo: TodoContextProps["addTodo"];
-}
-
-export function AddTodoButton(props: AddTodoButtonProps) {
-  const { addTodo } = props;
+export function AddTodoButton() {
   const [clicked, setClicked] = useState(false);
+  const { addTodo } = useContext(TodoActionsContext);
 
   const handleClick = () => setClicked((prev) => !prev);
 
@@ -29,10 +23,9 @@ export function AddTodoButton(props: AddTodoButtonProps) {
   const newTodo: Todo = {
     id: Number(new Date()),
     text: null,
-    category: "",
     completed: false,
     createdAt: new Date().toString(),
   };
 
-  return <TodoItemMemo todo={newTodo} updateTodo={handleAddTodo} />;
+  return <TodoItem todo={newTodo} onTextUpdate={handleAddTodo} />;
 }
