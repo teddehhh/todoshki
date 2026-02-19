@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import type { Todo } from "../../../../entities/todo/types/todo";
-import { TodoActionsContext } from "../../../../entities/todo/model/todo-context";
 import { TodoItem } from "../todo-item/todo-item";
+import { useTodoActionsContext } from "../../../../entities/todo/lib/hooks/use-todo-actions";
 
 export function AddTodoButton() {
   const [clicked, setClicked] = useState(false);
-  const { addTodo } = useContext(TodoActionsContext);
+  const { addTodo } = useTodoActionsContext();
 
   const handleClick = () => setClicked((prev) => !prev);
 

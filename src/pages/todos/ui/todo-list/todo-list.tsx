@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { TodoStateContext } from "../../../../entities/todo/model/todo-context";
+import { useTodoStateContext } from "../../../../entities/todo/lib/hooks/use-todo-state";
 import { TodoItemMemo } from "../todo-item/todo-item";
 import styles from "./todo-list.module.css";
 
 export function TodoList() {
-  const { todos, loading, error } = useContext(TodoStateContext);
+  const { todos, loading, error } = useTodoStateContext();
 
   return (
     <>
