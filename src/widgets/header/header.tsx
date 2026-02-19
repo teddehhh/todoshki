@@ -18,7 +18,7 @@ export function Header() {
                 appearance: e.target.checked
                   ? APPEARANCES.dark
                   : APPEARANCES.light,
-                font: FONTS.monospace,
+                font: e.target.checked ? FONTS.sansSerif : FONTS.geologica,
               });
             }}
           />

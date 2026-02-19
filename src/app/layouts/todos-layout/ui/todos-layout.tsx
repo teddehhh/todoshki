@@ -9,7 +9,9 @@ export function TodosLayout() {
       <Header />
       <main className={styles.container}>
         <Sidebar />
-        <Outlet />
+        <div className={styles["outlet-container"]}>
+          <Outlet />
+        </div>
       </main>
     </>
   );

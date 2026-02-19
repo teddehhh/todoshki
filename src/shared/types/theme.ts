@@ -3,8 +3,8 @@ export const APPEARANCES = {
   dark: "dark",
 } as const;
 export const FONTS = {
-  monospace: "monospace",
-  sansSerif: "sans-serif",
+  geologica: "Geologica",
+  sansSerif: "Sans-Serif",
 } as const;
 
 type Appearance = (typeof APPEARANCES)[keyof typeof APPEARANCES];

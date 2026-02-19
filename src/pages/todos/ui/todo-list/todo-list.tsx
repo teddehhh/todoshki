@@ -10,7 +10,7 @@ export function TodoList() {
   // const handleAddTodo = (todo: Todo) => addTodo(todo);
 
   return (
-    <div className={styles["container"]}>
+    <>
       <div className={styles["title-container"]}>
         <div>Учеба</div>
         <div>5 заметок</div>
@@ -26,6 +26,6 @@ export function TodoList() {
         ))}
         {/* <AddTodoButton addTodo={handleAddTodo} /> */}
       </div>
-    </div>
+    </>
   );
 }
