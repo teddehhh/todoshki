@@ -30,23 +30,13 @@ export function useTodos() {
   );
 
   useEffect(() => {
-    async function fetchTodos() {
-      try {
-        setLoading(true);
-        const res = await fetch("http://localhost:3000/todos");
-        const data = await res.json();
+    const getTodos = async () => {
+      const res = await fetch("/api");
+      const data = await res.json();
+      console.log(data);
+    };
 
-        setTodos(data);
-      } catch (error) {
-        setError({ message: "Не удалось загрузить данные", details: error });
-      } finally {
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
-      }
-    }
-
-    fetchTodos();
+    getTodos();
   }, []);
 
   const actions = useMemo(

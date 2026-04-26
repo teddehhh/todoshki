@@ -4,7 +4,7 @@
     min-height: 0;
 }
 
-.outlet-container {
+.children-container {
     flex: 5;
     min-height: 0;
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.5);
