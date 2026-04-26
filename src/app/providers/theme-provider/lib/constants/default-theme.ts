@@ -1,4 +1,4 @@
-import { APPEARANCES, FONTS } from "../../../../../shared/types/theme";
+import { APPEARANCES, FONTS } from "@/shared/types";
 
 export const DEFAULT_THEME = {
   appearance: APPEARANCES.light,

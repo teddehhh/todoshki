@@ -3,7 +3,7 @@ import {
   TODO_DISPLAY_MODE,
   type TodoDisplayMode,
 } from "../../types/todo-display-types";
-import type { Todo } from "../../../../entities/todo/types/todo";
+import type { Todo } from "@/entities/todo";
 
 interface TodoDisplayProps {
   text: Todo["text"];

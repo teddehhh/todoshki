@@ -1,5 +1,5 @@
+import { AuthContext } from "@/shared/lib";
 import { useEffect, useState, type PropsWithChildren } from "react";
-import { AuthContext } from "../../../../shared/lib/context/auth-context";
 
 export function AuthProvider(props: PropsWithChildren) {
   const { children } = props;

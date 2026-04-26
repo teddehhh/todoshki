@@ -1,8 +1,7 @@
 import { memo, useCallback, type ChangeEvent } from "react";
-import { useTodoActionsContext } from "../../../../entities/todo/lib/hooks/use-todo-actions";
-import type { Todo } from "../../../../entities/todo/types/todo";
 import { TodoDisplayMemo } from "../todo-display/todo-display";
 import styles from "./todo-item.module.css";
+import { useTodoActionsContext, type Todo } from "@/entities/todo";
 
 interface TodoItemProps {
   todo: Todo;
@@ -19,14 +18,17 @@ export function TodoItem(props: TodoItemProps) {
     updateTodo(todo.id, { completed: event.target.checked });
   };
 
-  const handleUpdateText = useCallback((text: string) => {
-    if (onTextUpdate) {
-      onTextUpdate(todo.id, { ...todo, text });
-      return;
-    }
+  const handleUpdateText = useCallback(
+    (text: string) => {
+      if (onTextUpdate) {
+        onTextUpdate(todo.id, { ...todo, text });
+        return;
+      }
 
-    updateTodo(todo.id, { ...todo, text });
-  }, []);
+      updateTodo(todo.id, { ...todo, text });
+    },
+    [todo, onTextUpdate, updateTodo],
+  );
 
   const handleRemove = (todoId: Todo["id"]) => {
     removeTodo?.(todoId);

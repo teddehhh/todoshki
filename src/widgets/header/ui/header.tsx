@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { ThemeContext } from "../../shared/lib/context/theme-context";
-import { APPEARANCES, FONTS } from "../../shared/types/theme";
 import styles from "./header.module.css";
+import { ThemeContext } from "@/shared/lib";
+import { APPEARANCES, FONTS } from "@/shared/types";
 
 export function Header() {
   const theme = useContext(ThemeContext);

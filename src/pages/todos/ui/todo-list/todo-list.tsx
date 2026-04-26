@@ -1,4 +1,4 @@
-import { useTodoStateContext } from "../../../../entities/todo/lib/hooks/use-todo-state";
+import { useTodoStateContext } from "@/entities/todo";
 import { TodoItemMemo } from "../todo-item/todo-item";
 import styles from "./todo-list.module.css";
 

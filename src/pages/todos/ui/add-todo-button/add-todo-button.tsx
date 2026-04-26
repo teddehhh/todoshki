@@ -1,7 +1,6 @@
 import { useState } from "react";
-import type { Todo } from "../../../../entities/todo/types/todo";
 import { TodoItem } from "../todo-item/todo-item";
-import { useTodoActionsContext } from "../../../../entities/todo/lib/hooks/use-todo-actions";
+import { useTodoActionsContext, type Todo } from "@/entities/todo";
 
 export function AddTodoButton() {
   const [clicked, setClicked] = useState(false);

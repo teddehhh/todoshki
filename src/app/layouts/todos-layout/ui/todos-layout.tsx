@@ -1,7 +1,7 @@
-import { Header } from "../../../../widgets/header/header";
-import { Sidebar } from "../../../../widgets/sidebar/ui/sidebar/sidebar";
+import { Header } from "@/widgets/header";
 import styles from "./todos-layout.module.css";
 import type { PropsWithChildren } from "react";
+import { Sidebar } from "@/widgets/sidebar";
 
 export function TodosLayout(props: PropsWithChildren) {
   const { children } = props;
